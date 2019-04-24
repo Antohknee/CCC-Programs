@@ -1,67 +1,81 @@
-import java.io.*;
-import java.util.*;
+import java.util.Scanner;
 
-import javax.sound.sampled.Line;
 public class IconScaling2 
 {
 
-	public static void main(String[] args) throws Exception 
-	{
-		Scanner sc = new Scanner(new FileReader("IconScalingIN2.txt"));
-		PrintWriter pw = new PrintWriter(new FileWriter("IconScalingOUT2.txt"));
-		
-		int scale = 0;
-		scale = sc.nextInt();
-		String userinput = sc.next();
-		String linei = "";
-		String line = "";
-		int chode = (scale*userinput.length());
-		char[][] str = new char[userinput.length()][userinput.length()];
-		
-		char[] line1 = userinput.toCharArray();
-		
-		for(int i = 0; i<str.length; i++)
-		{
-			str[0][i] = line1[i];
-			//pw.print(str[0][i]);
-		}
-		//pw.println("");
-		
-		for(int i = 1; i<str.length; i++)
-		{
-			linei = sc.next();
-			char[] line2 = linei.toCharArray();
-			
-			for(int x = 0; x<str.length; x++)
-			{
-				str[i][x] = line2[x];
-				//pw.print(str[i][x]);
-			}
-			//pw.println("");
-		}
-		
-		for(int i = 0; i<userinput.length(); i++)
-		{
-			for(int y = 0; y<scale; y++)
-			{
-				
-				for(int x = 0; x<userinput.length(); x++)
-				{
-					for(int z = 0; z<scale; z++)
-					{
-						pw.print(str[i][x]);
-					}
-					
-				}
-				pw.println("");
-			}
-			
-		}
-		
-		pw.flush();
-		pw.close();
-		
-		
-	}
+ public static void main(String[] args) 
+ {
+  Scanner sc = new Scanner(System.in);
+  
+  //Declare all the variables needed
+  int scale = 0;
+  String x = "x";
+  String space = " ";
+  String asterisk = "*";
+  
+  //User input for scale
+  System.out.println("Please enter a scale: ");
+  scale = sc.nextInt();
+  
+  //Duplicating the image
+  
+  //Line 1
+  for(int i=0; i < scale; i++)
+  {
+   for(int a=0; a < scale; a++)
+   {
+    System.out.print(asterisk);
+   }
+   
+   for(int a=0; a < scale; a++)
+   {
+    System.out.print(x);
+   }
+   
+   for(int a=0; a < scale; a++)
+   {
+    System.out.println(asterisk);
+   }
+  }
+  
+  //Line 2
+  for(int z=0; z < scale; z++)
+  {
+   for(int i=0; i < scale; i++)
+   {
+    System.out.print(x);
+   }
+   
+   for(int i=0; i < scale; i++)
+   {
+    System.out.print(x);
+   }
+   
+   for(int i=0; i < scale; i++)
+   {
+    System.out.print(x);
+   }
+  }
+  /*
+  //Line 3
+  for(int y=0; y < scale; y++)
+  {
+   for(int i=0; i < scale; i++)
+   {
+    System.out.println(asterisk);
+   }
+   
+   for(int i=0; i < scale; i++)
+   {
+    System.out.print(space);
+   }
+   
+   for(int i=0; i < scale; i++)
+   {
+    System.out.print(asterisk);
+   }
+  }
+  */
+ }
 
 }
